@@ -55,9 +55,9 @@
       "timeout": 10
     },
     {
-      "name": "registration.html has text/email/password/tel fields",
+      "name": "registration.html has text/email/password/tel/date fields",
       "setup": "",
-      "run": "grep -i 'type=\"text\"' registration.html && grep -i 'type=\"email\"' registration.html && grep -i 'type=\"password\"' registration.html && grep -i 'type=\"tel\"' registration.html",
+      "run": "grep -i 'type=\"text\"' registration.html && grep -i 'type=\"email\"' registration.html && grep -i 'type=\"password\"' registration.html && grep -i 'type=\"tel\"' registration.html && grep -i 'type=\"date\"' registration.html",
       "input": "",
       "expected_output": "",
       "comparison": "included",
@@ -70,15 +70,6 @@
       "input": "",
       "expected_output": "radio",
       "comparison": "included",
-      "timeout": 10
-    },
-    {
-      "name": "registration.html has 3 selects for DOB",
-      "setup": "",
-      "run": "if [ $(grep -ic '<select' registration.html) -ge 3 ]; then echo '3 or more selects found'; fi",
-      "input": "",
-      "expected_output": "3 or more selects found",
-      "comparison": "exact",
       "timeout": 10
     },
     {
