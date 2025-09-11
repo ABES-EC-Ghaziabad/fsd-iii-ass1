@@ -1,0 +1,139 @@
+{
+  "tests": [
+    {
+      "name": "Check required HTML files exist",
+      "setup": "",
+      "run": "ls index.html login.html registration.html cse.html ece.html eee.html civil.html cart.html",
+      "input": "",
+      "expected_output": "",
+      "comparison": "included",
+      "timeout": 10
+    },
+    {
+      "name": "index.html has header, nav, and table",
+      "setup": "",
+      "run": "grep -i '<header' index.html && grep -i '<nav' index.html && grep -i '<table' index.html",
+      "input": "",
+      "expected_output": "",
+      "comparison": "included",
+      "timeout": 10
+    },
+    {
+      "name": "catalogue pages have book table",
+      "setup": "",
+      "run": "grep -i '<table' cse.html && grep -i '<table' ece.html && grep -i '<table' eee.html && grep -i '<table' civil.html",
+      "input": "",
+      "expected_output": "",
+      "comparison": "included",
+      "timeout": 10
+    },
+    {
+      "name": "cart.html has checkout button",
+      "setup": "",
+      "run": "grep -i 'Proceed to Checkout' cart.html",
+      "input": "",
+      "expected_output": "Proceed to Checkout",
+      "comparison": "included",
+      "timeout": 10
+    },
+    {
+      "name": "login.html has form with input fields",
+      "setup": "",
+      "run": "grep -i '<form' login.html && grep -i '<input' login.html",
+      "input": "",
+      "expected_output": "",
+      "comparison": "included",
+      "timeout": 10
+    },
+    {
+      "name": "registration.html has form tag",
+      "setup": "",
+      "run": "grep -i '<form' registration.html",
+      "input": "",
+      "expected_output": "<form",
+      "comparison": "included",
+      "timeout": 10
+    },
+    {
+      "name": "registration.html has text/email/password/tel fields",
+      "setup": "",
+      "run": "grep -i 'type=\"text\"' registration.html && grep -i 'type=\"email\"' registration.html && grep -i 'type=\"password\"' registration.html && grep -i 'type=\"tel\"' registration.html",
+      "input": "",
+      "expected_output": "",
+      "comparison": "included",
+      "timeout": 10
+    },
+    {
+      "name": "registration.html has radio for gender",
+      "setup": "",
+      "run": "grep -i 'type=\"radio\"' registration.html",
+      "input": "",
+      "expected_output": "radio",
+      "comparison": "included",
+      "timeout": 10
+    },
+    {
+      "name": "registration.html has 3 selects for DOB",
+      "setup": "",
+      "run": "if [ $(grep -ic '<select' registration.html) -ge 3 ]; then echo '3 or more selects found'; fi",
+      "input": "",
+      "expected_output": "3 or more selects found",
+      "comparison": "exact",
+      "timeout": 10
+    },
+    {
+      "name": "registration.html has checkboxes for languages",
+      "setup": "",
+      "run": "grep -i 'type=\"checkbox\"' registration.html",
+      "input": "",
+      "expected_output": "checkbox",
+      "comparison": "included",
+      "timeout": 10
+    },
+    {
+      "name": "registration.html has textarea for address",
+      "setup": "",
+      "run": "grep -i '<textarea' registration.html",
+      "input": "",
+      "expected_output": "<textarea",
+      "comparison": "included",
+      "timeout": 10
+    },
+    {
+      "name": "cse.html has at least 10 articles",
+      "setup": "",
+      "run": "if [ $(grep -ic '<article' cse.html) -ge 10 ]; then echo '10 or more'; fi",
+      "input": "",
+      "expected_output": "10 or more",
+      "comparison": "exact",
+      "timeout": 10
+    },
+    {
+      "name": "ece.html has at least 5 articles",
+      "setup": "",
+      "run": "if [ $(grep -ic '<article' ece.html) -ge 5 ]; then echo '5 or more'; fi",
+      "input": "",
+      "expected_output": "5 or more",
+      "comparison": "exact",
+      "timeout": 10
+    },
+    {
+      "name": "eee.html has at least 5 articles",
+      "setup": "",
+      "run": "if [ $(grep -ic '<article' eee.html) -ge 5 ]; then echo '5 or more'; fi",
+      "input": "",
+      "expected_output": "5 or more",
+      "comparison": "exact",
+      "timeout": 10
+    },
+    {
+      "name": "civil.html has at least 5 articles",
+      "setup": "",
+      "run": "if [ $(grep -ic '<article' civil.html) -ge 5 ]; then echo '5 or more'; fi",
+      "input": "",
+      "expected_output": "5 or more",
+      "comparison": "exact",
+      "timeout": 10
+    }
+  ]
+}
